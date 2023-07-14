@@ -1,0 +1,34 @@
+{
+    "version": 2,
+	"routes": [{
+		"headers": {
+			"Access-Control-Allow-Origin": "*"
+		},
+		"src": "/(.*)",
+		"dest": "app.py",
+		"continue": true
+	}],
+    "github": {
+        "silent": true
+    },
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Real-IP",
+                    "value": "$remote_addr"
+                },
+                {
+                    "key": "X-Forwarded-For",
+                    "value": "$proxy_add_x_forwarded_for"
+                },
+                {
+                    "key": "Host",
+                    "value": "$http_host"
+                }
+            ]
+        }
+    ]
+}
+

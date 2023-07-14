@@ -1,6 +1,7 @@
 # coding:utf-8
 
 import json
+import multiprocessing
 import os
 from multiprocessing import Queue, Process
 
@@ -15,11 +16,10 @@ from utils.variables import LOGGER
 from utils.feishu_api import FeiShuAPI
 from task_processor import task_queue, process_tasks
 
-load_dotenv()
+# load_dotenv()
 init_env()
 app = Flask(__name__)
 
-queue = Queue()
 
 APP_ID = os.getenv("FEISHU_APP_ID")
 APP_SECRET = os.getenv("FEISHU_APP_SECRET")
@@ -119,8 +119,11 @@ def card_message():
 
 
 def main():
+    process = multiprocessing.Process(target=process_tasks)
+    process.start()
     app.run()
-
+    task_queue.put(None)
+    process.join()
 
 if __name__ == "__main__":
     main()

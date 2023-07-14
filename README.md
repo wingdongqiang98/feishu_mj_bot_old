@@ -1,0 +1,1 @@
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwingdongqiang98%2Ffeishu_mj_bot&env=FEISHU_ENCRYPT_KEY&env=FEISHU_VERIFICATION_TOKEN&env=FEISHU_APP_ID&env=FEISHU_APP_SECRET&env=MJ_TASK_APIKEY&project-name=feishu_mj_bot&repository-name=feishu_mj_bot)
