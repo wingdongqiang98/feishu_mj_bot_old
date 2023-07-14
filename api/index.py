@@ -118,9 +118,20 @@ def card_message():
         return jsonify({})
 
 
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
+@app.route('/about')
+def about():
+    return 'About'
+
+
+process = multiprocessing.Process(target=process_tasks)
+process.start()
+
+
 def main():
-    process = multiprocessing.Process(target=process_tasks)
-    process.start()
     app.run()
     task_queue.put(None)
     process.join()
