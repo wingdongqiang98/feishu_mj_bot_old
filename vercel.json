@@ -1,17 +1,5 @@
 {
-    "version": 2,
-    "routes": [{
-        "src": "/(.*)",
-        "dest": "app.py",
-        "headers": {
-            "X-Real-IP": "$remote_addr",
-            "X-Forwarded-For": "$proxy_add_x_forwarded_for",
-            "Host": "$http_host",
-            "Access-Control-Allow-Origin": "*"
-        },
-        "continue": true
-    }],
-    "github": {
-        "silent": true
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/index" }
+  ]
 }
