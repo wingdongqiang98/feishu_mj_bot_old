@@ -3,18 +3,17 @@
 import json
 import multiprocessing
 import os
-from multiprocessing import Queue, Process
+
 
 import requests
 from flask import Flask, request, jsonify
-from dotenv import load_dotenv
 
-from utils.event_utils import EventManager, UrlVerificationEvent, MessageReceiveEvent
-from utils.log_utils import init_env
+from api.utils.event_utils import EventManager, UrlVerificationEvent, MessageReceiveEvent
+from api.utils.log_utils import init_env
 
-from utils.variables import LOGGER
-from utils.feishu_api import FeiShuAPI
-from task_processor import task_queue, process_tasks
+from api.utils.variables import LOGGER
+from api.utils.feishu_api import FeiShuAPI
+from api.task_processor import task_queue, process_tasks
 
 # load_dotenv()
 init_env()

@@ -1,5 +1,5 @@
 # coding:utf-8
-from utils.variables import LOGGER
+from api.utils.variables import LOGGER
 
 
 def error_cap(error_return=None):

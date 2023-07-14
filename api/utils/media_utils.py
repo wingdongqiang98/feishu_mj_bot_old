@@ -3,7 +3,7 @@ import io
 
 import requests
 
-from utils.func_utils import retry_try
+from api.utils.func_utils import retry_try
 
 
 @retry_try()

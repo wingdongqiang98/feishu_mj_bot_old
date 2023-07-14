@@ -9,12 +9,12 @@ import concurrent.futures
 from dotenv import load_dotenv
 
 
-from utils.feishu_api import FeiShuAPI
-from utils.log_utils import init_env
-from utils.media_utils import download_image_io
-from utils.task_api import MJApi
-from utils.variables import LOGGER, CARD_MSG_TEMPLATE
-from utils.func_utils import error_cap
+from api.utils.feishu_api import FeiShuAPI
+from api.utils.log_utils import init_env
+from api.utils.media_utils import download_image_io
+from api.utils.task_api import MJApi
+from api.utils.variables import LOGGER, CARD_MSG_TEMPLATE
+from api.utils.func_utils import error_cap
 load_dotenv()
 task_queue = Queue()
 

@@ -1,10 +1,7 @@
 # coding:utf-8
-import json
 import time
 
-import requests
-from urllib.parse import urljoin
-from utils.common_api import CommonAPIWrapper
+from api.utils.common_api import CommonAPIWrapper
 
 
 class MJApi(CommonAPIWrapper):

@@ -4,10 +4,10 @@ import json
 import abc
 import hashlib
 import typing as t
-from utils.func_utils import dict_2_obj
+from api.utils.func_utils import dict_2_obj
 from flask import request, jsonify
-from utils.message_utils import AESCipher
-from utils.variables import LOGGER
+from api.utils.message_utils import AESCipher
+from api.utils.variables import LOGGER
 
 
 class Event(object):
